@@ -1,7 +1,16 @@
+
+//resolvers.js
+const patrick ={
+    name:"pat",
+    age: 18,
+    gender: "male"
+};
+
+
 const resolvers ={
     Query: {
-        name: ()=>"patrick"
+        person: ()=>patrick
     }
-}
+};
 
 export default resolvers;
