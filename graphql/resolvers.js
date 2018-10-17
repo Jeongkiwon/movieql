@@ -1,24 +1,12 @@
-
-//resolvers.js
-const people =[
-{
-    id: 0,
-    name:"pat",
-    age: 18,
-    gender: "male"
-},
-{
-    id: 1,
-    name:"rick",
-    age: 20,
-    gender: "female"
-}];
-
-
+import {getMovies, getById, addMovie} from "./db";
 const resolvers ={
     Query: {
-        people: ()=>people
-    }
+        movies: ()=>getMovies(),
+        movie: (_,{id})=>getById(id)
+    },
+    Mutation:{
+        addMovie:(_, {name, score})=>addMovie(name,score)
+    },
 };
 
 export default resolvers;
